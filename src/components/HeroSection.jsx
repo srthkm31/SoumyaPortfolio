@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import bg from "../assets/bg1.png";
+import bg from "../assets/bg1.jpeg";
 
 const HeroSection = () => {
   const containerVariants = {

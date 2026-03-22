@@ -8,7 +8,6 @@ const WorksPage = () => {
       id: 1,
       title: "Samuka",
       img: project1,
-      category: "Web Application",
       viewlink: "https://autode.sk/4lK8YzX",
       file: "/projects/SAMUKA(UAV).STEP",
     },
@@ -16,7 +15,6 @@ const WorksPage = () => {
       id: 2,
       title: "6 Wheel Rocker Bogie",
       img: project2,
-      category: "Mobile Interface",
       viewlink: "https://autode.sk/4uLJB4I",
       file: "/projects/RockerBogie.STEP",
     },
@@ -52,7 +50,7 @@ const WorksPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
             {projects.map((project) => (
               <div
                 key={project.id}
@@ -67,11 +65,25 @@ const WorksPage = () => {
                   />
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent z-20 translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                  <p className="text-[#00B6B6] font-mono text-[10px] uppercase tracking-widest mb-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {project.category}
-                  </p>
+                <div className="md:hidden p-4 flex gap-3 justify-between">
+                  <a
+                    href={project.viewlink}
+                    target="_blank"
+                    className="flex-1 text-center bg-white text-black px-4 py-2 rounded-full text-sm font-semibold"
+                  >
+                    View Project
+                  </a>
 
+                  <a
+                    href={project.file}
+                    download
+                    className="flex items-center justify-center w-40 h-10 rounded-full border border-white/20 text-white"
+                  >
+                    Download
+                  </a>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent z-20 translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out hidden md:block">
                   <h3 className="text-xl font-bold text-white mb-4">
                     {project.title}
                   </h3>
@@ -83,41 +95,14 @@ const WorksPage = () => {
                       className="cursor-pointer flex items-center gap-2 bg-white text-black px-5 py-2.5 text-sm rounded-full font-semibold hover:bg-[#00B6B6] hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_15px_rgba(0,182,182,0.4)]"
                     >
                       View Project
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                        <polyline points="7 7 17 7 17 17"></polyline>
-                      </svg>
                     </a>
+
                     <a
                       href={project.file}
                       download
-                      className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 text-white hover:bg-[#00B6B6] hover:border-[#00B6B6] hover:text-white transition-all duration-300"
-                      aria-label="Download"
-                      title="Download File"
+                      className=" flex items-center justify-center w-40 h-10 rounded-full border border-white text-white hover:bg-[#00B6B6] hover:border-[#00B6B6] transition-all duration-300"
                     >
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                      </svg>
+                      Download
                     </a>
                   </div>
                 </div>
